@@ -1,0 +1,368 @@
+/*---------------------Global------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap');
+@import url('list.css');
+@import url('page.css');
+:root {
+    --text-color: #5d5f61;
+    --hover: rgba(218, 214, 214, 0.966);  
+}
+
+html, body {
+    height: 100vh;
+}
+
+header {
+    display: inline-block;
+    position: relative; /* needed for absolute positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 53px; /* set a fixed height */
+    box-sizing: border-box; /* include padding and border in height calculation */
+    background-color: transparent;
+    border-radius: 2px;
+    
+    overflow: hidden;
+    filter: blur(1.5px);
+    
+    transition: background-color 0.3s ease;
+  
+  }
+
+  header nav {
+    display: inline-block;
+    position: absolute;
+    top: 8.5px;
+    right: 4%;
+  }
+  
+  header nav ul {
+    margin: 0;
+    padding-right: 10px;
+    list-style: none;
+  }
+  
+  header nav li {
+    display: inline-block;
+    padding-right: 25px;
+  }
+  
+  header nav a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+  }
+
+  header:hover {
+    background-color: #eeeeee20;
+    filter: blur(.39px);
+  }
+  
+  header nav a:hover {
+    background-color: #c4c0c0;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    /*background-image: url("assets/old\ school.jpg"); no-repeat center center fixed;
+    background-size: cover;
+    background-position: 0px 785px;*/
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Saira Condensed' , sans-serif;
+    margin: 0;
+    padding: 0;
+    /*color: var(--text-color);*/
+} 
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+p, h1 {
+    color:#333;
+    border-radius: 1px;
+    
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price {
+    display: inline-block;
+    font-size: 16px;
+    background: transparent;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    background: transparent;
+    letter-spacing: 5px;
+    font-size: 1.75rem;
+    position: absolute;
+    left: 4.8%;
+}
+
+section {
+    margin-top: 0px;
+    margin-bottom: 180px;
+    padding-top: 60px;
+    padding-bottom: 60px 0px;
+    overflow: auto;
+    margin: 30px 0px;
+    margin-right: 15px;
+}
+
+section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right; 
+}
+
+section:nth-of-type(even) .landing__container p {
+    padding-right: 15px;  
+}
+section:nth-of-type(even) .landing__container h2 {
+    padding-right: 15px;  
+}
+
+footer {
+    position: fixed;
+    font-size: 12px;
+    height: 3%; 
+    width: 100%;
+    margin-top: 100px;
+    bottom: 0;
+    background-color: transparent;
+    text-align: center;
+    color: rgba(19, 159, 219, 0.863);
+    clear: both;
+}
+
+footer p {
+    text-shadow: none;
+}
+
+/*-----------X---------Global---------X--------------*/
+
+/*----------------------Nav-------------------------*/
+
+/*#burger-menu {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    margin: 4px auto;
+    cursor: pointer;
+    top: 0%;
+    right: 0%;
+    margin-right: 20px;
+    margin-top: 7px;
+}
+
+.burger-line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0px;
+    border-radius: 40px;
+    background-color: var(--text-color);
+}*/
+/*------------X---------Nav---------X---------------*/
+
+/* Landing Container Styles */
+.landing__container {
+    margin-top: 15px;
+    padding-bottom: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 50px;
+    text-align: left;
+    min-height: 50%;
+    font-size: 1.3rem;
+    margin-bottom: 180px;
+    margin-left: 10px;
+    background-color: transparent;
+    border-radius: 3px;
+    max-width: 46.5em;
+}
+.landing__container p {
+    padding-bottom: 20px;  
+}
+.landing__container h2 {
+    padding-top: 20px;  
+}
+
+/*------------X---------REELS--------X---------------*/
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .slide-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    margin-top: 70px;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 500px;
+    scroll-snap-align: start;
+  }
+  
+  .prev-slide,
+  .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 3rem;
+    background: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .prev-slide {
+    left: 0;
+  }
+  
+  .next-slide {
+    right: 0;
+  }
+/*----------------------BLOG-------------------------*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+   
+  }
+
+  .article {
+    padding: 100px 300px;
+    max-height: 80vh;
+    background-color: transparent;
+   
+  }
+/*----------------------BLOG-------------------------*/
+/*----------------------CATALOGUE-------------------------*/
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+/* catalogue styles */
+#catalogue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  filter: blur(1.5px);
+}
+
+#catalogue:hover {
+  filter: blur(.29px);
+}
+
+#topedge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  filter: blur(1.5px);
+  transition: background-color 0.3s ease;
+}
+
+#topedge:hover {
+  filter: blur(0.3px);
+}
+
+
+.albumcover {
+  width: 14%;
+  margin: 10px auto;
+  height: auto;
+  display: block;
+
+}
+
+#collection-component-1682441941923 {
+  margin-top: 80px;
+}
+/*----------------------CATALOUGE-------------------------*/
+/*----------------------Mobile-------------------------*/
+@media only screen and (max-width:730px) {
+    #burger-menu {
+        display: block; 
+    }
+
+    #logo {
+        white-space: nowrap;
+    }
+
+    #navbar__list {
+        display: none;
+        width: 100vw;     
+    }
+
+    .menu__links a {
+        display: block;
+        padding: 5px;
+        margin: 5px;
+        letter-spacing: 5px;
+        border-radius: 30px;
+    }
+
+    .section {
+        margin-right: 10px;
+        margin-top: 40px;
+        margin-bottom: 300px;
+        padding-top: 60px;
+        padding-bottom: 80px;
+        overflow: auto;
+        margin: 20px 0px;
+    }
+
+    #toggle:checked + #navbar__list {
+        display: inline-block;
+        text-align: right;
+        clear: both;
+
+    }
+}
