@@ -23,7 +23,7 @@ header {
     background-color: transparent;
     border-radius: 2px;
     overflow: hidden;
-    filter: blur(1.5px);
+    filter: blur(1.3px);
     transition: background-color 0.3s ease;
   }
 
