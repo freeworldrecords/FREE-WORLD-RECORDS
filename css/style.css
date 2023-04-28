@@ -3,7 +3,7 @@
 @import url('list.css');
 @import url('page.css');
 :root {
-    --text-color: #5d5f61;
+    --text-color: #c8cbce;
     --hover: rgba(218, 214, 214, 0.966);  
 }
 
@@ -27,12 +27,30 @@ header {
     filter: blur(1.5px);
     
     transition: background-color 0.3s ease;
-  
   }
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
 
   header nav {
     display: inline-block;
     position: absolute;
+    padding: 0px 10px;
     top: 8.5px;
     right: 4%;
   }
@@ -51,16 +69,21 @@ header {
   header nav a {
     display: block;
     text-decoration: none;
-    color: #333;
+    color:  #c8cbce;
+    padding-left: 7px;
+    padding-right: 7px;
   }
 
   header:hover {
-    background-color: #eeeeee20;
+    background-color: transparent;
     filter: blur(.39px);
   }
   
   header nav a:hover {
-    background-color: #c4c0c0;
+    background-color: #333;
+    border-radius: 3px;
+    margin: 0;
+    display: inline-block;
   }
 
 body {
@@ -327,7 +350,7 @@ h2 {
 }
 /*----------------------CATALOUGE-------------------------*/
 /*----------------------Mobile-------------------------*/
-@media only screen and (max-width:730px) {
+@media only screen and (max-width:526px) {
     #burger-menu {
         display: block; 
     }
@@ -336,11 +359,23 @@ h2 {
         white-space: nowrap;
     }
 
-    #navbar__list {
-        display: none;
-        width: 100vw;     
+    .navbar__menu {
+        padding: 0px;
+
     }
 
+    header nav ul {
+        margin: 0;
+        padding-right: 0px;
+        list-style: none;
+      }
+
+    header nav li {
+        display: inline-block;
+        padding-right: 0px;
+      }
+
+   
     .menu__links a {
         display: block;
         padding: 5px;
