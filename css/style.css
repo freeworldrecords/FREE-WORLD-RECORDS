@@ -22,11 +22,18 @@ header {
     box-sizing: border-box; /* include padding and border in height calculation */
     background-color: transparent;
     border-radius: 2px;
-    
     overflow: hidden;
     filter: blur(1.5px);
-    
     transition: background-color 0.3s ease;
+  }
+
+  video {
+    position: fixed;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+
   }
 
   body {
@@ -35,31 +42,6 @@ header {
     height: 100vh;
     background-color: transparent;
     overflow: hidden;
-}
-
-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    opacity: 0.7;
-}
-
-@media (min-aspect-ration: 16/9){
-    .back-video{
-        width: 100%;
-        height: auto;
-
-    }
-}
-@media (max-aspect-ration: 16/9){
-    .back-video{
-        width: auto;
-        height: 100%;
-
-    }
 }
 
   header nav {
@@ -78,7 +60,7 @@ video {
   
   header nav li {
     display: inline-block;
-    padding-right: 25px;
+    padding-right: 15px;
   }
   
   header nav a {
@@ -126,7 +108,6 @@ a {
 p, h1 {
     color:#333;
     border-radius: 1px;
-    
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -415,4 +396,31 @@ h2 {
         clear: both;
 
     }
+
 }
+
+@media only screen and (max-width:450px) {
+    .navbar__menu {
+        top:auto;
+        bottom: 0;
+
+        
+    }
+
+}
+
+header {
+    display: inline-block;
+    position: relative; /* needed for absolute positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 66px; /* set a fixed height */
+    box-sizing: border-box; /* include padding and border in height calculation */
+    background-color: transparent;
+    border-radius: 2px;
+    overflow: hidden;
+    filter: blur(1.5px);
+    transition: background-color 0.3s ease;
+  }
