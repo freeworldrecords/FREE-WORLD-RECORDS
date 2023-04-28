@@ -103,3 +103,17 @@ function checkout() {
   const cartPopup = document.querySelector('.cart-popup');
   cartPopup.remove();
 }
+
+const expandButtons = document.querySelectorAll('.expand');
+
+expandButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const content = button.parentElement.nextElementSibling;
+        content.classList.toggle('hidden');
+        if (content.classList.contains('hidden')) {
+            button.textContent = 'Expand';
+        } else {
+            button.textContent = 'Collapse';
+        }
+    });
+});

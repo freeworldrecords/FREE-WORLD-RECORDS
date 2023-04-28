@@ -3,7 +3,7 @@
 @import url('list.css');
 @import url('page.css');
 :root {
-    --text-color: #c8cbce;
+    --text-color: #ffffff;
     --hover: rgba(218, 214, 214, 0.966);  
 }
 
@@ -23,8 +23,23 @@ header {
     background-color: transparent;
     border-radius: 2px;
     overflow: hidden;
-    filter: blur(1.3px);
+    filter: blur(.2px);
+    opacity: 100%;
     transition: background-color 0.3s ease;
+    text-shadow: -.5px .5px 1 #000,
+                  .5px .5px 1 #000,
+                  .5px -.5px 1 #000,
+                  -5px -.5px 1 #000;
+  }
+
+  header nav {
+    display: inline-block;
+    padding-right: 20px;
+  }
+
+  .navbar__menu {
+    padding-top: 2px;
+
   }
 
   video {
@@ -33,6 +48,7 @@ header {
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
+    opacity: 95%;
 
   }
 
@@ -47,26 +63,23 @@ header {
   header nav {
     display: inline-block;
     position: absolute;
-    padding: 0px 10px;
     top: 8.5px;
-    right: 4%;
+    right: 0%;
   }
   
   header nav ul {
     margin: 0;
-    padding-right: 10px;
     list-style: none;
   }
   
   header nav li {
     display: inline-block;
-    padding-right: 15px;
   }
   
   header nav a {
     display: block;
     text-decoration: none;
-    color:  #c8cbce;
+    color:  #ffffff;
     padding-left: 7px;
     padding-right: 7px;
   }
@@ -132,7 +145,7 @@ ul {
     letter-spacing: 5px;
     font-size: 1.75rem;
     position: absolute;
-    left: 4.8%;
+    left: 3%;
 }
 
 section {
@@ -286,6 +299,31 @@ main {
     background-color: transparent;
    
   }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .blog-posts {
+    width: 70%;
+    overflow: auto;
+  }
+  
+  article {
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  article header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
 /*----------------------BLOG-------------------------*/
 /*----------------------CATALOGUE-------------------------*/
 h1 {
@@ -357,28 +395,31 @@ h2 {
 
     .navbar__menu {
         padding: 0px;
+        padding-top: 2px;
 
     }
 
-    header nav ul {
-        margin: 0;
-        padding-right: 0px;
-        list-style: none;
-      }
-
+   .navbar__menu {
+      padding-right: 20px;
+    }
+  
+    
     header nav li {
         display: inline-block;
         padding-right: 0px;
       }
 
-   
-    .menu__links a {
+      header nav li {
+        display: inline-block;
+      }
+      
+      header nav a {
         display: block;
-        padding: 5px;
-        margin: 5px;
-        letter-spacing: 5px;
-        border-radius: 30px;
-    }
+        text-decoration: none;
+        color:  #ffffff;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
 
     .section {
         margin-right: 10px;
@@ -399,7 +440,7 @@ h2 {
 
 }
 
-@media only screen and (max-width:450px) {
+@media only screen and (max-width:472px) {
     .navbar__menu {
         top:auto;
         bottom: 0;
